@@ -1,0 +1,31 @@
+{
+  "name": "@developmentcubed/nicehash-api",
+  "version": "1.0.0",
+  "description": "Wrapper for nicehash api",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevelopmentCubed/nicehash-api.git"
+  },
+  "keywords": [
+    "nicehash",
+    "api"
+  ],
+  "author": "Hazed SPaCEx",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/DevelopmentCubed/nicehash-api/issues"
+  },
+  "homepage": "https://github.com/DevelopmentCubed/nicehash-api#readme",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}
