@@ -3,16 +3,17 @@ import { stringify } from "querystring";
 import { createHmac, randomBytes } from "crypto";
 
 import { Currency, Fiat } from "./types/Currency";
-import Account from "./types/Account";
-import Accounts from "./types/Accounts";
+import { Account } from "./types/Account";
+import { Accounts } from "./types/Accounts";
 import { ActivityType } from "./types/ActivityType";
-import Activity from "./types/Activity";
+import { Activity } from "./types/Activity";
 import { MiningPayments } from "./types/MiningPayment";
-import WithdrawalAddress, {
+import {
+  WithdrawalAddress,
   WithdrawalAddresses,
 } from "./types/WithdrawalAddress";
 
-interface Constructor {
+export interface Constructor {
   apiKey: string;
   apiSecret: string;
   orgID: string;
@@ -27,12 +28,7 @@ export class NiceHash {
 
   /**
    * Creates an instance of NiceHash.
-   * @param {Constructor} {
-   *     apiKey,
-   *     apiSecret,
-   *     orgID,
-   *     apiHost = "https://api2.nicehash.com"
-   *   }
+   * @param {Constructor} constructor
    * @memberof NiceHash
    */
   constructor({
@@ -183,7 +179,7 @@ export class NiceHash {
       "GET",
       `/main/api/v2/accounting/activity/${currency}`,
       type ? { limit, type } : { limit }
-    ) as Promise<Activity>;
+    ) as Promise<Activity[]>;
   }
 
   /**

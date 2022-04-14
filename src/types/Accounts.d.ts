@@ -1,7 +1,7 @@
-import Account from "./Account";
+import { Account } from "./Account";
 import { Currency } from "./Currency";
 
-export default interface Accounts {
+export interface Accounts {
   total: {
     currency: Currency;
     totalBalance: string;

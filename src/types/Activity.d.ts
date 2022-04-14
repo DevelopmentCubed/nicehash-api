@@ -1,7 +1,7 @@
 import { ActivityType } from "./ActivityType";
 import { Currency } from "./Currency";
 
-export default interface Activity {
+export interface Activity {
   time: number;
   id: string;
   type: ActivityType;

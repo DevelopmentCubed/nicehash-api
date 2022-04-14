@@ -1,6 +1,6 @@
 import { Currency } from "./Currency";
 
-export default interface WithdrawalAddress {
+export interface WithdrawalAddress {
   id: string;
   type: {
     code: string;

@@ -1,6 +1,6 @@
 import { Currency } from "./Currency";
 
-export default interface Account {
+export interface Account {
   active: boolean;
   currency: Currency;
   totalBalance: string;
