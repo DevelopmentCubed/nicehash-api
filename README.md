@@ -3,6 +3,8 @@
 
 A wrapper for the NiceHash API.
 
+You can view the documentation [here](https://developmentcubed.github.io/nicehash-api/classes/index.NiceHash.html).
+
 ## Installation
 ```
 npm install -S @developmentcubed/nicehash-api
