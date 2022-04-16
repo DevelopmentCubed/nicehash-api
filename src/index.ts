@@ -17,7 +17,7 @@ export interface Constructor {
   apiKey: string;
   apiSecret: string;
   orgID: string;
-  apiHost: string;
+  apiHost?: string;
 }
 
 export class NiceHash {
