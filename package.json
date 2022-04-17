@@ -14,7 +14,7 @@
     "prepare": "npm run build",
     "prepublishOnly": "tag-matches",
     "preversion": "npm run lint && npm run docs",
-    "version": "npm run format && git add -A src",
+    "version": "npm run format && git add -A src docs",
     "postversion": "git push && git push --tags",
     "docs": "typedoc --entryPointStrategy expand src"
   },

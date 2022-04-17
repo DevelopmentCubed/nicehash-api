@@ -2,16 +2,18 @@ import axios, { AxiosError, AxiosInstance, Method } from "axios";
 import { stringify } from "querystring";
 import { createHmac, randomBytes } from "crypto";
 
-import { Currency, Fiat } from "./types/Currency";
-import { Account } from "./types/Account";
-import { Accounts } from "./types/Accounts";
-import { ActivityType } from "./types/ActivityType";
-import { Activity } from "./types/Activity";
-import { MiningPayments } from "./types/MiningPayment";
 import {
+  Currency,
+  Fiat,
+  Account,
+  Accounts,
+  ActivityType,
+  Activity,
+  MiningPayments,
   WithdrawalAddress,
   WithdrawalAddresses,
-} from "./types/WithdrawalAddress";
+  MiningRigs,
+} from "./types";
 
 export interface Constructor {
   apiKey: string;
@@ -249,5 +251,32 @@ export class NiceHash {
       withdrawalAddressId: address,
       amount,
     }) as Promise<{ id: string }>;
+  }
+
+  /**
+   * Get all rigs
+   *
+   * @param {("NAME" | "PROFITABILITY" | "ACTIVE" | "INACTIVE")} [sort="NAME"]
+   * @param {string} [system=""]
+   * @param {string} [status=""]
+   * @param {number} [size=25]
+   * @param {number} [page=0]
+   * @return {Promise<MiningRigs>}
+   * @memberof NiceHash
+   */
+  getRigs(
+    sort: "NAME" | "PROFITABILITY" | "ACTIVE" | "INACTIVE" = "NAME",
+    system: string = "",
+    status: string = "",
+    size: number = 25,
+    page: number = 0
+  ) {
+    return this.request("GET", "/main/api/v2/mining/rigs2", {
+      sort,
+      system,
+      status,
+      size,
+      page,
+    }) as Promise<MiningRigs>;
   }
 }
