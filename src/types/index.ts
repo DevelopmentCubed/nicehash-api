@@ -222,7 +222,7 @@ export interface MiningRigs {
       revolutionsPerMinute: number;
       revolutionsPerMinutePercentage: number;
       powerMode: {
-        enumName: 'UNKNOWN'| 'LOW'| 'MEDIUM'| 'HIGH'| 'MIXED';
+        enumName: "UNKNOWN" | "LOW" | "MEDIUM" | "HIGH" | "MIXED";
         description: string;
       };
       powerUsage: number;
@@ -233,7 +233,7 @@ export interface MiningRigs {
         displaySuffix: string;
       }[];
       intensity: {
-        enumName: 'UNKNOWN'| 'LOW'| 'HIGH';
+        enumName: "UNKNOWN" | "LOW" | "HIGH";
         description: string;
       };
       nhqm: string;
