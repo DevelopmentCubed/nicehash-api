@@ -13,6 +13,7 @@ import {
   WithdrawalAddress,
   WithdrawalAddresses,
   MiningRigs,
+  AlgorithmsStats,
 } from "./types";
 
 export interface Constructor {
@@ -278,5 +279,24 @@ export class NiceHash {
       size,
       page,
     }) as Promise<MiningRigs>;
+  }
+
+  /**
+   * Get the stats for algorithms being mined
+   *
+   * @param {string} [rigId]
+   * @return {Promise<AlgorithmsStats>}
+   * @memberof NiceHash
+   */
+  getAlgorithmsStats(rigId?: string) {
+    return this.request(
+      "GET",
+      "/main/api/v2/mining/algo/stats",
+      rigId
+        ? {
+            rigId,
+          }
+        : undefined
+    ) as Promise<AlgorithmsStats>;
   }
 }

@@ -291,3 +291,16 @@ interface Pagination {
   page: number;
   totalPageCount: number;
 }
+
+export interface AlgorithmsStats {
+  algorithms: {
+    [algo: string]: {
+      unpaid: string;
+      profitability: number;
+      speedAccepted: number;
+      speedRejected: number;
+      displaySuffix: string;
+      isActive: boolean;
+    }
+  };
+}
