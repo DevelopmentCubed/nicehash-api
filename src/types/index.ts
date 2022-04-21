@@ -301,6 +301,6 @@ export interface AlgorithmsStats {
       speedRejected: number;
       displaySuffix: string;
       isActive: boolean;
-    }
+    };
   };
 }
